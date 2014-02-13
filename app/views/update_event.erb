@@ -19,7 +19,9 @@
   </form>
 </div>
 
-<h2> You can however delete me if you so desire ... <br><br><a href="/delete/<%= @event.id %>">::Sob Sob::</a></h2>
+<% if session[:user_id] == @event.creator_id %>
+  <h2> You can however delete me if you so desire ... <br><br><a href="/delete/<%= @event.id %>">::Sob Sob::</a></h2>
+<% end %>
 
 
 </div>
