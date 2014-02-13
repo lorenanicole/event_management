@@ -5,15 +5,24 @@
     <a href="/logout">Log Out</a>
   <%end%>
 
-  <h2> Want to Create a Thing to do? If <a href="/create_event">so click here!</a> </h2>
+  <h2> Want to Create a Thing to do? If <a href="/create_event">so click here!</a> or fill it out below here -- </h2>
 
+   <div id="create-event-form">
+    <form id="create-event" method="post" action="/create_event">
+    Name:<input id='name' type="text" name="name" placeholder=" Bedazzling Ponies Thing" > <br><br>
+    Location:<input id ="location" type="text" name="location" placeholder=" The Park Behind That House" > <br><br>
+    Starts At:<input id ="starts" type="text" name="starts" placeholder="Use the DD-MM-YYYY format"><br><br>
+    Ends At:<input id ="ends" type="text" name="ends" placeholder="Use the DD-MM-YYYY format"><br><br>
+    <input id="Make" type="submit" value="Make that Thing!">
+  </form>
 
-  <% if @events_created %>
   <h2> Your Fabulous Things You've Created to do with People </h2>
-    <ul>
+     <% if @events_created %>
+     <ul id="events">
     <% @events_created.each do |event| %>
       <li> Thing: <a href="/update_event/<%=event.id%>"> <%= event.name %></a>to be Held on: <%= event.starts_at %> </li>
     <% end %>
     </ul>
   <% end %>
+
 </div>

@@ -1,11 +1,11 @@
-get '/create_event' do
-  erb :create_event
-end
+require 'pry'
 
 post '/create_event' do
-  puts "#{params[:starts]}"
   @event = Event.create(creator_id: session[:user_id], name: params[:name], location: params[:location], starts_at: Date.parse(params[:starts]), ends_at: Date.parse(params[:ends]))
-  erb :create_event
+  url = "<a href='/update_event/" + "#{@event.id}" + "'>"
+  starts_at = "#{@event.starts_at}"
+  content_type :json
+  {url: url, name: @event.name, starts: starts_at}.to_json
 end
 
 get '/update_event/:event_id' do
