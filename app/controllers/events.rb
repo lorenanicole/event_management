@@ -10,7 +10,11 @@ end
 
 get '/update_event/:event_id' do
   @event = Event.find(params[:event_id])
-  erb :update_event
+  if @event.creator_id != session[:user_id]
+    redirect '/profile'
+  else
+    erb :update_event
+  end
 end
 
 post '/update_event/:event_id' do
