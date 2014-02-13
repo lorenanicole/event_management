@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h1 id="welcome"> Doing Things with People </h1>
+
+<% if @error %>
+  <%= @error %>
+<% end %>
+
+<div id="forms">
+
+<div id = "sign-in-form">
+  <form id="old-form" method="post" action="/sessions">
+    Email:<input type = "text" name = "email" placeholder=" e.g. whoam@i.co"><br><br>
+    Password: <input type="password" name="password" placeholder=" 6 or more characters"><br><br>
+    <input type="submit" value="Sign In">
+  </form>
+</div>
+<h1 id="sign-up">Sign Up</h1>
+<div id="sign-up-form">
+  <form id="new-form" method="post" action="/profile">
+    First Name:<input type="text" name="first_name" placeholder=" Mr." > <br><br>
+    Last Name:<input type="text" name="last_name" placeholder=" Popo" > <br><br>
+    Email:<input type="text" name="email" placeholder= " e.g. whoam@i.co"><br><br>
+    Password:<input type="password" name="password" placeholder=" 6 or more characters"><br><br>
+    Birthday:<input type="date" name="bday"><br><br>
+    <input type="submit" value="Sign Up">
+  </form>
+</div>
+</div>
+</div>
+
+
