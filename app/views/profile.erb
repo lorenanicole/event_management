@@ -7,6 +7,8 @@
 
   <h2> Want to Create a Thing to do? I KNOW YOU WANT TO ... do it ... make one down below here!!! </h2>
 
+  <h2 id="response"></h2>
+
    <div id="create-event-form">
     <form id="create-event" method="post" action="/create_event">
     Name:<input id='name' type="text" name="name" placeholder=" Bedazzling Ponies Thing" > <br><br>
@@ -24,5 +26,15 @@
     <% end %>
     </ul>
   <% end %>
+
+  <h2>Bored? How about some pirate talk!</h2>
+   <p>What would you like to say me hearty?</p>
+
+  <form id="pirate" action='/' method='post'>
+    <input id="pirate-sentence" type='text' name='sentence'>
+    <input id="pirate-submit" type='submit' value='yargh translate me'>
+  </form>
+  <div id='pirate-response'>
+  </div>
 
 </div>
