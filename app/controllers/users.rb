@@ -29,6 +29,7 @@ end
 
 
 get '/profile' do
+  @events_created = User.find(session[:user_id]).created_events
   erb :profile
 end
 

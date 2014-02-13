@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :password, presence: true
 
-  has_many :event_attendances
-  has_many :events, through: :event_attendances
+  has_many :attended_events, :class_name => "EventAttendance", :foreign_key => "user_id"
+
+  has_many :created_events, :class_name => "Event", :foreign_key => "creator_id"
 
   def password
     @password ||= Password.new(password_hash)

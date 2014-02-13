@@ -1,0 +1,25 @@
+<div class="container">
+    <% if session[:user_id] %>
+    <a href="/logout">Log Out</a>
+    <a href="/profile">Return to Gaze at Your Home of Things to Do with People</a>
+  <%end%>
+  <h2> Review that most excellent thing  <%= @event.name %> that you would like to do with people </h2>
+  <div id="update-event-form">
+  <h4> If you'd like to update me please do so, but you must fill out pieces of info so People know how to boogey with you! </h4>
+  <form id="update-event" method="post" action="/update_event/<%= @event.id %>">
+    <p>You last named me -- <%= @event.name %></p>
+    Name:<input type="text" name="name" placeholder="<%= @event.name %>" > <br><br>
+    <p>You last had me happ'n at -- <%= @event.location %></p>
+    Location:<input type="text" name="location" placeholder="<%= @event.location %>" > <br><br>
+    <p>You last had me startin' my groove at -- <%= @event.starts_at %></p>
+    Starts At:<input type="text" name="starts" placeholder="Use the DD-MM-YYYY format"><br><br>
+    <p>You last had me ending' my groove at -- <%= @event.ends_at %></p>
+    Ends At:<input type="text" name="ends" placeholder="Use the DD-MM-YYYY format"><br><br>
+    <input type="submit" value="Update that Thing!">
+  </form>
+</div>
+
+<h2> You can however delete me if you so desire ... <br><br><a href="/delete/<%= @event.id %>">::Sob Sob::</a></h2>
+
+
+</div>

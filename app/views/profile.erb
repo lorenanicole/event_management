@@ -5,4 +5,15 @@
     <a href="/logout">Log Out</a>
   <%end%>
 
+  <h2> Want to Create a Thing to do? If <a href="/create_event">so click here!</a> </h2>
+
+
+  <% if @events_created %>
+  <h2> Your Fabulous Things You've Created to do with People </h2>
+    <ul>
+    <% @events_created.each do |event| %>
+      <li> Thing: <a href="/update_event/<%=event.id%>"> <%= event.name %></a>to be Held on: <%= event.starts_at %> </li>
+    <% end %>
+    </ul>
+  <% end %>
 </div>

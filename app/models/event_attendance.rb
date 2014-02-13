@@ -1,6 +1,6 @@
 class EventAttendance < ActiveRecord::Base
 
   belongs_to :user
-  belongs_to :event_attendance
+  belongs_to :event
 
 end

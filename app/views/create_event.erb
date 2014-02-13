@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1> Let's Do Things with People ... what would you like to do? </h1>
+
+  <% if @event %>
+    <h2>Congrats! You have successfully made that thing <%= @event.name %> to now do with people! </h2>
+  <%end%>
+
+  <div id="create-event-form">
+  <form id="create-event" method="post" action="/create_event">
+    Name:<input type="text" name="name" placeholder=" Bedazzling Ponies Thing" > <br><br>
+    Location:<input type="text" name="location" placeholder=" The Park Behind That House" > <br><br>
+    Starts At:<input type="text" name="starts" placeholder="Use the DD-MM-YYYY format"><br><br>
+    Ends At:<input type="text" name="ends" placeholder="Use the DD-MM-YYYY format"><br><br>
+    <input type="submit" value="Make that Thing!">
+  </form>
+
+   <% if session[:user_id] %>
+    <a href="/logout">Log Out</a>
+    <a href="/profile">Return to Profile</a>
+  <%end%>
+<end>
