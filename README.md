@@ -52,3 +52,10 @@ With user authentication in place, create pages which let the user create new ev
 
 ### Part 4: AJAXify it (Timing ~ 30 min)
 On the page that lists all the events created by the user, add the form for creating a new event.  Use AJAX on this form so that when a user adds a new event, that new event is appended to the list of created events without refreshing the page.
+
+
+TO DO 
+
+1. finish password validation (what if empty string?!)
+2. finish .attended_events logic
+3. use the create form as update form too
